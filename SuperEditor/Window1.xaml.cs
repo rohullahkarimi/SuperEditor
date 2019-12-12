@@ -51,3 +51,5 @@ namespace NotePaadi1
                 //NewWindowTextBox.Text = mywindow.textBox1.Text;
             }
  * */
+
+// sample txt file link: https://www.w3.org/TR/PNG/iso_8859-1.txt

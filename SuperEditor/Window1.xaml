@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="NewWindowTextBox" HorizontalAlignment="Left" Margin="490,40,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NewWindowTextBox" HorizontalAlignment="Left" Margin="297,42,0,0" Text="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="ok" Content="Ok" HorizontalAlignment="Left" Margin="690,34,0,0" VerticalAlignment="Top" Click="ok_Click" Height="30" Width="65" IsDefault="True"/>
         <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="690,77,0,0" VerticalAlignment="Top" Height="32" Width="65" Click="cancel_Click" IsCancel="True"/>
-        <Label Content="Kirjoittaa koko" HorizontalAlignment="Left" Margin="385,36,0,0" VerticalAlignment="Top" Height="76" Width="120"/>
+        <Label Content="Kirjoittaa font koko" HorizontalAlignment="Left" Margin="23,37,0,0" VerticalAlignment="Top" Height="28" Width="120" RenderTransformOrigin="0.277,0.425"/>
+        <Label Content="Kirjoittaa http osoite" HorizontalAlignment="Left" Margin="23,65,0,0" VerticalAlignment="Top" Height="28" Width="120" RenderTransformOrigin="0.277,0.425"/>
+        <TextBox x:Name="httpTextBox" HorizontalAlignment="Left" Margin="297,70,0,0" Text="https://www." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
 
     </Grid>

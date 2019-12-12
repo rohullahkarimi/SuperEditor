@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.IO;
+using System.Net.Http;
 
 namespace NotePaadi1
 {
@@ -24,20 +25,26 @@ namespace NotePaadi1
     {
         private string fileNameWithFullPath;
 
-        
+        static readonly HttpClient client = new HttpClient();
+
+
         public MainWindow()
         {
             InitializeComponent();
             fileNameWithFullPath = "";
         }
 
+      
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             // MessageBox.Show("Exit");
             Close();
+            
         }
 
         Stream myStream;
+        private IDocumentPaginatorSource flowDocument;
+        
 
         public TextBox ActiveControl { get; private set; }
 
@@ -82,8 +89,9 @@ namespace NotePaadi1
         // EXIT 
         private void menuExit_Click(object sender, RoutedEventArgs e)
         {
-           // Application.Exit();
+            // Application.Exit();
             //  MessageBox.Show(ofd.FileName);
+            Application.Current.Shutdown();
         }
 
         // FONT FORMAT
@@ -118,9 +126,52 @@ namespace NotePaadi1
         private void Print_Click(object sender, RoutedEventArgs e)
         {
             // Create the print dialog object and set options
-            PrintDialog dlg = new PrintDialog();
-            dlg.ShowDialog();
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(grid, "My First Print Job");
+            }
+        }
 
+        // HTTP read from url txt file.
+        private async void http_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            Window1 mywindow = new Window1();
+            mywindow.ShowDialog();
+
+            string httpOsoiteLinkki = mywindow.httpTextBox.Text;// mywindow.NewWindowTextBox.Text;
+
+            // Call asynchronous network methods in a try/catch block to handle exceptions.
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(httpOsoiteLinkki); // here can insert some txt format file link 
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                // Above three lines can be replaced with new helper method below
+                // string responseBody = await client.GetStringAsync(uri);
+
+                textBox1.Text = responseBody;
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0} ", ex.Message);
+            }
         }
     }
 }
+
+
+/*
+ *
+ *  // TODO::
+ *      Koosta kurssin aikana käsiteltyjä tekniikoita hyödyntävä sovellus (WPF/.NET Core)
+        Osa toiminnoista saattaa vaatia uuden ikkunan avaamisen ym.
+        Tallennus on välttämätön
+        Piirtäminen(+hiiri), * netistä lukeminen, monipuoliset kontrollit, menu, erilaiset eventit,..
+        Pyri liittämään mahdolliset aiemmin tehdyt sovellukset ikkunoina, ei avattavina exe-tiedostoina
+        Ihannetapauksessa pääikkunan työtilassa tehdään kaikki editoinnit (teksti, kuva,..)
+        Palauta projektikansio zipattuna
+ * */

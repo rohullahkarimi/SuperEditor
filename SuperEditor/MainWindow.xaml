@@ -27,8 +27,9 @@
             <MenuItem Header="Format">
                 <MenuItem Header="_Font" Click="font_Click"/>
             </MenuItem>
-            
 
+
+            <MenuItem Header="http-text" Click="http_Click"/>
 
             <MenuItem Header="Help" Click="MenuItem_Click">
                 <MenuItem Header="_About" Click="MenuItem_Click_1"/>
