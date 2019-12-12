@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using System.IO;
 using System.Net.Http;
+using Microsoft.Win32;
 
 namespace NotePaadi1
 {
@@ -44,7 +45,7 @@ namespace NotePaadi1
 
         Stream myStream;
         private IDocumentPaginatorSource flowDocument;
-        
+        private bool issaved;
 
         public TextBox ActiveControl { get; private set; }
 
@@ -84,6 +85,32 @@ namespace NotePaadi1
             }
             //MessageBox.Show("It WORKS");
             //throw new NotImplementedException();
+        }
+        // SAVE AS
+        private void MenuSaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.InitialDirectory = "c:\\";
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt"; // FOR ALL 
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            var dr = saveFileDialog1.ShowDialog();
+            if (dr == true)
+            {
+                using (var SaveFile = new StreamWriter(saveFileDialog1.FileName))
+                {
+                    SaveFile.WriteLine(textBox1.Text);
+                    issaved = true;
+                }
+            }
+            else  // cancel (or something else)
+            {
+                textBox1.Text = "CANCEL";
+                issaved = false;
+            }
+
         }
 
         // EXIT 
@@ -161,10 +188,8 @@ namespace NotePaadi1
             }
         }
 
-        private void MenuSaveAs_Click(object sender, RoutedEventArgs e)
-        {
+        
 
-        }
     }
 }
 
