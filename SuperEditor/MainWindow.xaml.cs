@@ -167,11 +167,11 @@ namespace NotePaadi1
 /*
  *
  *  // TODO::
- *      Koosta kurssin aikana käsiteltyjä tekniikoita hyödyntävä sovellus (WPF/.NET Core)
-        Osa toiminnoista saattaa vaatia uuden ikkunan avaamisen ym.
-        Tallennus on välttämätön
-        Piirtäminen(+hiiri), * netistä lukeminen, monipuoliset kontrollit, menu, erilaiset eventit,..
-        Pyri liittämään mahdolliset aiemmin tehdyt sovellukset ikkunoina, ei avattavina exe-tiedostoina
+ *      * Koosta kurssin aikana käsiteltyjä tekniikoita hyödyntävä sovellus (WPF/.NET Core)
+        * Osa toiminnoista saattaa vaatia uuden ikkunan avaamisen ym.
+        Tallennus on välttämätön (add save as)
+        Piirtäminen(+hiiri), * netistä lukeminen, * monipuoliset kontrollit, * menu, erilaiset eventit,..
+        * Pyri liittämään mahdolliset aiemmin tehdyt sovellukset ikkunoina, ei avattavina exe-tiedostoina
         Ihannetapauksessa pääikkunan työtilassa tehdään kaikki editoinnit (teksti, kuva,..)
         Palauta projektikansio zipattuna
  * */
