@@ -24,7 +24,7 @@
                 <MenuItem Header="_Paste" Command="ApplicationCommands.Paste" Click="paste_Click"/>
                 <MenuItem Header="C_hange Color..."/>
             </MenuItem>
-            
+
             <MenuItem Header="Format">
                 <MenuItem Header="_Font" Click="font_Click"/>
             </MenuItem>
@@ -35,11 +35,12 @@
             <MenuItem Header="Help" Click="MenuItem_Click">
                 <MenuItem Header="_About" Click="MenuItem_Click_1"/>
             </MenuItem>
-         
+
         </Menu>
 
         <Grid x:Name="grid">
             <TextBox x:Name="textBox1" AcceptsReturn="True" Margin="0,0,120,0"/>
+            <Button x:Name="draw" Content="Draw" HorizontalAlignment="Left" Margin="710,61,0,0" VerticalAlignment="Top" Height="35" Width="70" Click="Draw_Click"/>
         </Grid>
     </DockPanel>
 </Window>

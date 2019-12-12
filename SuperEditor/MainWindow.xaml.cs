@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Net.Http;
 using Microsoft.Win32;
+using SuperEditor;
 
 namespace NotePaadi1
 {
@@ -188,8 +189,15 @@ namespace NotePaadi1
             }
         }
 
-        
+        private void Draw_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 mywindow = new Window2();
+            mywindow.ShowDialog();
 
+            //textBox1.Text = mywindow.NewWindowTextBox.Text;
+            //textBox1.FontSize = Convert.ToInt32(mywindow.NewWindowTextBox.Text);// mywindow.NewWindowTextBox.Text;
+
+        }
     }
 }
 
