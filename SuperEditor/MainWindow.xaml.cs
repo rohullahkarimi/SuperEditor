@@ -160,6 +160,11 @@ namespace NotePaadi1
                 Console.WriteLine("Message :{0} ", ex.Message);
             }
         }
+
+        private void MenuSaveAs_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 
