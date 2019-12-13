@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         Title="Window2" Height="450" Width="800">
     <Grid>
-        <InkCanvas x:Name="inkCanvas1" Width="600" HorizontalAlignment="Left"/>
+        <InkCanvas x:Name="inkCanvas1" Width="600" HorizontalAlignment="Left" Background="Transparent"/>
         <Button x:Name="ok" Content="Ok" HorizontalAlignment="Left" Margin="706,11,0,0" VerticalAlignment="Top" Click="ok_Click" Height="30" Width="66" IsDefault="True"/>
         <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="636,10,0,0" VerticalAlignment="Top" Height="32" Width="65" Click="cancel_Click" IsCancel="True"/>
         <Button x:Name="clear" Content="Clear" HorizontalAlignment="Left" Margin="690,84,0,0" VerticalAlignment="Top" Height="32" Width="65" Click="clear_Click"/>
         <Button x:Name="undo" Content="Undo" HorizontalAlignment="Left" Margin="690,121,0,0" VerticalAlignment="Top" Height="31" Width="65" Click="undo_Click"/>
         <Button x:Name="red" Content="Red Color" HorizontalAlignment="Left" Margin="690,185,0,0" VerticalAlignment="Top" Height="32" Width="65" Click="red_Click"/>
         <Button x:Name="blue" Content="Blue Color" HorizontalAlignment="Left" Margin="690,222,0,0" VerticalAlignment="Top" Height="32" Width="65" Click="blue_Click"/>
+        <Button x:Name="saveImage" Content="Save Image" HorizontalAlignment="Left" Margin="690,285,0,0" VerticalAlignment="Top" Height="37" Width="69" Click="saveImage_Click"/>
 
 
     </Grid>

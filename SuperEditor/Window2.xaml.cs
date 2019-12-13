@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32.SafeHandles;
 
 namespace SuperEditor
 {
@@ -17,6 +19,8 @@ namespace SuperEditor
     /// </summary>
     public partial class Window2 : Window
     {
+        private SafeFileHandle sPath;
+
         public Window2()
         {
             InitializeComponent();
@@ -58,6 +62,29 @@ namespace SuperEditor
         private void blue_Click(object sender, RoutedEventArgs e)
         {
             inkCanvas1.DefaultDrawingAttributes.Color = Colors.Blue;
+        }
+        // SAVE IMAGE
+        private void saveImage_Click(object sender, RoutedEventArgs e)
+        {
+            Rect bounds = VisualTreeHelper.GetDescendantBounds(inkCanvas1);
+            double dpi = 96d;
+
+            RenderTargetBitmap rtb = new RenderTargetBitmap((int)bounds.Width, (int)bounds.Height, dpi, dpi, System.Windows.Media.PixelFormats.Default);
+            DrawingVisual dv = new DrawingVisual();
+            using (DrawingContext dc = dv.RenderOpen())
+            {
+                VisualBrush vb = new VisualBrush(inkCanvas1);
+                dc.DrawRectangle(vb, null, new Rect(new Point(), bounds.Size));
+            }
+            rtb.Render(dv);
+
+            BitmapEncoder pngEncoder = new PngBitmapEncoder();
+            pngEncoder.Frames.Add(BitmapFrame.Create(rtb));
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+            {
+                pngEncoder.Save(ms);
+                System.IO.File.WriteAllBytes("P:\\test.png", ms.ToArray());
+            }
         }
     }
 }
