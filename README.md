@@ -5,7 +5,15 @@ WPF is used in SuperEditor application. WPF is a . NET Core UI framework for bui
 
 
 
-
+# Features
+1. Write text and save it as txt file on any location
+2. Open txt files
+3. Read txt file from HTTP links
+4. Draw use black, red and blue color pencil and save it as PNG file 
+5. Print documents
+6. Guide button
+7. COPY, PASTE AND UNDO features
+8. Color font size modification
 
 
 
