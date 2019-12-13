@@ -50,6 +50,9 @@ namespace NotePaadi1
 
         public TextBox ActiveControl { get; private set; }
 
+
+  
+
         // Open
         private void MenuOpen_Click(object sender, RoutedEventArgs e)
         {
@@ -114,6 +117,18 @@ namespace NotePaadi1
 
         }
 
+        // PRINT
+
+        private void Print_Click(object sender, RoutedEventArgs e)
+        {
+            // Create the print dialog object and set options
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(grid, "My First Print Job");
+            }
+        }
+
         // EXIT 
         private void menuExit_Click(object sender, RoutedEventArgs e)
         {
@@ -150,16 +165,7 @@ namespace NotePaadi1
             textBox1.Text = textBox1.Text.Insert(position, Clipboard.GetText());
         }
 
-        // PRINT
-        private void Print_Click(object sender, RoutedEventArgs e)
-        {
-            // Create the print dialog object and set options
-            PrintDialog printDialog = new PrintDialog();
-            if (printDialog.ShowDialog() == true)
-            {
-                printDialog.PrintVisual(grid, "My First Print Job");
-            }
-        }
+        
 
         // HTTP read from url txt file.
         private async void http_Click(object sender, RoutedEventArgs e)
@@ -198,6 +204,8 @@ namespace NotePaadi1
             //textBox1.FontSize = Convert.ToInt32(mywindow.NewWindowTextBox.Text);// mywindow.NewWindowTextBox.Text;
 
         }
+
+       
     }
 }
 

@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File" Click="Print_Click">
+            <MenuItem Header="_File" >
                 <MenuItem Header="_Open..."  Click="MenuOpen_Click"/>
                 <MenuItem Header="_Save..." Click="MenuSave_Click"/>
                 <MenuItem Header="_Save as..." Click="MenuSaveAs_Click"/>
