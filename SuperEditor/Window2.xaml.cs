@@ -49,5 +49,15 @@ namespace SuperEditor
             }
 
         }
+        // READ COLOR
+        private void red_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas1.DefaultDrawingAttributes.Color = Colors.Red;
+        }
+        // BLUE COLOR
+        private void blue_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas1.DefaultDrawingAttributes.Color = Colors.Blue;
+        }
     }
 }
