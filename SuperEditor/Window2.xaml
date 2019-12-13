@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="Window2" Height="450" Width="800">
     <Grid>
+        <InkCanvas x:Name="inkCanvas1" Width="600" HorizontalAlignment="Left"/>
         <Button x:Name="ok" Content="Ok" HorizontalAlignment="Left" Margin="690,34,0,0" VerticalAlignment="Top" Click="ok_Click" Height="30" Width="65" IsDefault="True"/>
         <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="690,77,0,0" VerticalAlignment="Top" Height="32" Width="65" Click="cancel_Click" IsCancel="True"/>
-        
+        <Button x:Name="clear" Content="Clear" HorizontalAlignment="Left" Margin="690,124,0,0" VerticalAlignment="Top" Height="32" Width="65" Click="clear_Click"/>
+        <Button x:Name="undo" Content="Undo" HorizontalAlignment="Left" Margin="690,171,0,0" VerticalAlignment="Top" Height="37" Width="65" Click="undo_Click"/>
+
+
     </Grid>
 </Window>

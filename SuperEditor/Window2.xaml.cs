@@ -30,10 +30,23 @@ namespace SuperEditor
 
         }
 
+        // CLEAR
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas1.Strokes.Clear();
+        }
 
-        // label.Font = new Font("Murtuza", 10);
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+        //UNDO
+        private void undo_Click(object sender, RoutedEventArgs e)
+        {
+            if (inkCanvas1.Strokes.Count > 0)
+            {
+                inkCanvas1.Strokes.RemoveAt(inkCanvas1.Strokes.Count - 1);
+            }
 
         }
     }
