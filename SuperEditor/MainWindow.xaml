@@ -22,7 +22,7 @@
                 <MenuItem Header="_Undo"/>
                 <MenuItem Header="_Copy" Click="copy_Click"/>
                 <MenuItem Header="_Paste" Command="ApplicationCommands.Paste" Click="paste_Click"/>
-                <MenuItem Header="C_hange Color..."/>
+               
             </MenuItem>
 
             <MenuItem Header="Format">
